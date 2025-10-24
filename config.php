@@ -1,19 +1,11 @@
 <?php
-// config.php - استخدام getenv() لقراءة المتغيّرات من Railway
+// config.php - يعمل 100% بعد نسخ Host و Password من Connect
 
-$servername = getenv('MYSQLHOST');
-$username   = getenv('MYSQLUSER');
-$password   = getenv('MYSQLPASSWORD');
-$dbname     = getenv('MYSQLDATABASE');
+$servername = "containers-us-west-142.railway.app";  // ← من Host
+$username   = "root";
+$password   = "كلمة_المرور_المنسوخة_من_Connect";     // ← من Password
+$dbname     = "railway";
 
-// إذا لم تُقرأ (للأمان)
-if (!$servername || !$username || !$password || !$dbname) {
-    error_log("فشل قراءة المتغيّرات من Railway");
-    http_response_code(500);
-    exit("خطأ في الإعدادات. تحقق من المتغيّرات.");
-}
-
-// إنشاء الاتصال
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
