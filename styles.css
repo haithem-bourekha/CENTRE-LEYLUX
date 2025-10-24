@@ -1,0 +1,344 @@
+:root {
+    --radius: 20px;
+    --card-bg: #e9e0d9;
+    --info-radius: 14px;
+}
+
+body {
+    font-family: 'Inter', 'Arial', sans-serif;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+header a {
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: #1f2937;
+}
+
+footer {
+    background-color: #1e40af;
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+.card {
+    width: 360px;
+    border-radius: calc(var(--radius) + 6px);
+    overflow: visible;
+    position: relative;
+    background: #f8f6f3;
+    border: none; /* Supprime toute bordure */
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card .hero {
+    width: 100%;
+    height: 460px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+    background-color: #f0ebe6;
+    background-size: cover;
+    background-position: center;
+    filter: saturate(1.02) contrast(1.02);
+    border: none; /* Supprime toute bordure */
+    transition: transform 0.6s ease;
+}
+
+.card:hover .hero {
+    transform: scale(1.02);
+}
+
+.info {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 18px;
+    background: #fff;
+    border-radius: var(--info-radius);
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transform: translateY(0);
+    border: none; /* Supprime toute bordure */
+    transition: transform 0.25s ease;
+}
+
+.card:hover .info {
+    transform: translateY(-6px);
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: none; /* Supprime la bordure grise */
+    background: linear-gradient(180deg, #ffffff, #fcfcfd);
+    font-size: 13px;
+    color: #15202b;
+    flex-shrink: 0;
+}
+
+.badge svg {
+    width: 18px;
+    height: 18px;
+    opacity: 0.85;
+}
+
+.title-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width:  Extent: 0;
+}
+
+.title {
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 700;
+    color: #0b1820;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #6b7176;
+}
+
+.cta {
+    margin-left: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.cta svg {
+    width: 18px;
+    height: 18px;
+    stroke: #2b3438;
+    stroke-width: 2;
+    fill: none;
+}
+
+.cta:active {
+    transform: scale(0.96);
+}
+
+@media (max-width: 420px) {
+    .card {
+        width: 92vw;
+    }
+    .card .hero {
+        height: 420px;
+    }
+    .title {
+        font-size: 22px;
+    }
+}
+
+.card-new {
+    border: none; /* Supprime bordure grise */
+    border-radius: 8px;
+    padding: 1rem;
+    transition: transform 0.3s ease; /* Remplacé box-shadow par transform */
+}
+
+.card-new:hover {
+    transform: scale(1.02); /* Remplacé box-shadow par échelle */
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: none; /* Supprime bordure grise */
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+.video-bg {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Scrollbar Styling for Horizontal Row */
+.flex-row {
+    -ms-overflow-style: auto;
+    scrollbar-width: auto;
+    scrollbar-color: #6b7176 #e9e0d9;
+}
+
+.flex-row::-webkit-scrollbar {
+    height: 10px;
+}
+
+.flex-row::-webkit-scrollbar-track {
+    background: #e9e0d9;
+    border-radius: 5px;
+    margin: 8px;
+}
+
+.flex-row::-webkit-scrollbar-thumb {
+    background: #6b7176;
+    border-radius: 5px;
+}
+
+.flex-row::-webkit-scrollbar-thumb:hover {
+    background: #5a6268;
+}
+
+/* Scroll Snap for Smooth Scrolling */
+.snap-x {
+    scroll-snap-type: x mandatory;
+}
+
+.snap-center {
+    scroll-snap-align: center;
+}
+
+/* Pagination Styling */
+.pagination {
+    position: relative;
+    z-index: 10;
+}
+
+.pagination-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #d1d5db; /* Gardé pour contraste, mais peut être changé */
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-dot.active {
+    background-color: #a855f7; /* Purple for active dot */
+    width: 20px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.pagination-arrow {
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff; /* Changé de #e5e7eb (gris) à blanc */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    color: #6b7280;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.pagination-arrow:hover {
+    background-color: #f0f0f0; /* Gris clair remplacé par une teinte neutre */
+}
+
+.pagination-arrow:active {
+    transform: scale(0.95);
+}
+
+/* Styles pour la section Diplomas */
+.diploma-stack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Hauteur ajustable selon vos besoins */
+    position: relative;
+}
+
+.diploma-card {
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.diploma-card img {
+    border-radius: 12px;
+    border: none; /* Supprime bordure grise potentielle */
+}
+
+.diploma-card:hover {
+    transform: translateZ(20px) scale(1.05);
+    z-index: 10;
+}
+
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+    transform-style: preserve-3d;
+}
+
+.transition-transform {
+    transition: transform 0.3s ease;
+}
+
+/* Ajustements pour les écrans plus petits */
+@media (max-width: 768px) {
+    #diplomas {
+        flex-direction: column;
+    }
+    .diploma-stack {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+    .diploma-card {
+        position: relative;
+        transform: none !important;
+        width: 100%;
+        max-width: 300px;
+    }
+    .diploma-card img,
+    .diploma-card div {
+        width: 100%;
+        height: auto;
+    }
+    .md:w-1/3, .md:w-2/3 {
+        width: 100%;
+    }
+}
