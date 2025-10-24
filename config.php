@@ -3,7 +3,7 @@
 
 $servername = "containers-us-west-142.railway.app";  // ← من Host
 $username   = "root";
-$password   = "كلمة_المرور_المنسوخة_من_Connect";     // ← من Password
+$password   = "yKvfZEQRwPwPfDBSSNvECPqvtJAfTkjn";     // ← من Password
 $dbname     = "railway";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
