@@ -1,12 +1,14 @@
 <?php
-// config.php - يعمل 100% بعد نسخ Host و Password من Connect
+// config.php - اتصال داخلي عبر Railway Proxy
 
-$servername = "containers-us-west-142.railway.app";  // ← من Host
+$servername = "crossover.proxy.rlwy.net";  // ← من نافذة Connect
+$port       = 27752;                       // ← من نافذة Connect
 $username   = "root";
-$password   = "yKvfZEQRwPwPfDBSSNvECPqvtJAfTkjn";     // ← من Password
+$password   = "yKvfZEQRwPwPfDBSSNvECPqvtJAfTkjn";  // ← من نافذة Connect
 $dbname     = "railway";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+// إعدادات الاتصال
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
 
 if ($conn->connect_error) {
     error_log("فشل الاتصال: " . $conn->connect_error);
